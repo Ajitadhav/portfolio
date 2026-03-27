@@ -1,46 +1,108 @@
-# Getting Started with Create React App
+# Ajit Adhav - Portfolio Website
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A modern, responsive portfolio website for Ajit Adhav, a Computer Science Engineering student.
 
-## Available Scripts
+## 🚀 Features
 
-In the project directory, you can run:
+- **Modern Design**: Clean, professional UI with dark theme and gradient accents
+- **Responsive**: Fully optimized for mobile, tablet, and desktop devices
+- **Smooth Animations**: Built with Framer Motion for engaging user experience
+- **Sections Included**:
+  - Hero section with introduction and social links
+  - About section with personal introduction
+  - Skills section with categorized skill cards
+  - Projects section with project showcases
+  - Education section with academic details
+  - Certificates section
+  - Contact section with contact form
+  - Footer with social links
 
-### `npm start`
+## 🛠️ Tech Stack
 
-Runs the app in the development mode.\
+- **React** - Frontend framework
+- **TypeScript** - Type safety
+- **Tailwind CSS** - Styling framework
+- **Framer Motion** - Animation library
+- **Heroicons** - Icon library
+
+## 📦 Installation
+
+1. Clone the repository:
+```bash
+git clone https://github.com/ajitadhav/ajit-portfolio.git
+cd ajit-portfolio
+```
+
+2. Install dependencies:
+```bash
+npm install
+```
+
+3. Start the development server:
+```bash
+npm start
+```
+
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## 🏗️ Project Structure
 
-### `npm test`
+```
+src/
+├── components/
+│   ├── Hero.tsx          # Hero section
+│   ├── About.tsx         # About section
+│   ├── Skills.tsx        # Skills section
+│   ├── Projects.tsx      # Projects section
+│   ├── Education.tsx     # Education section
+│   ├── Certificates.tsx  # Certificates section
+│   ├── Contact.tsx       # Contact section
+│   ├── Footer.tsx        # Footer
+│   └── Navbar.tsx        # Navigation bar
+├── App.tsx               # Main app component
+├── index.css             # Global styles
+└── index.tsx             # Entry point
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## 🎨 Customization
 
-### `npm run build`
+- **Colors**: Modify `tailwind.config.js` to update the color scheme
+- **Content**: Update individual component files to change text and data
+- **Animations**: Adjust Framer Motion settings in components
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## 📱 Responsive Design
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+The portfolio is fully responsive and works seamlessly across:
+- Mobile devices (320px and up)
+- Tablets (768px and up)
+- Desktops (1024px and up)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## 🚀 Deployment
 
-### `npm run eject`
+### Build for production
+```bash
+npm run build
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+The build files will be in the `build` folder, ready for deployment.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Deploy to Netlify, Vercel, or any static hosting service
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## 📄 License
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+This project is open source and available under the [MIT License](LICENSE).
 
-## Learn More
+## 🤝 Contributing
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Contributions, issues, and feature requests are welcome! Feel free to check [issues page](https://github.com/ajitadhav/ajit-portfolio/issues).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## 📞 Contact
+
+- **Email**: ajitadhav.dev@gmail.com
+- **Phone**: +91-7620486926
+- **GitHub**: https://github.com/ajitadhav
+- **LinkedIn**: https://linkedin.com/in/ajitadhav
+
+---
+
+Built with ❤️ by Ajit Adhav

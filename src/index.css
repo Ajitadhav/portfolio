@@ -1,13 +1,310 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-gradient-to-br from-gray-950 via-blue-950 to-purple-950 text-gray-100;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+      sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    letter-spacing: 0.02em;
+  }
+
+  code {
+    font-family: 'Fira Code', 'SF Mono', Monaco, Inconsolata, 'Roboto Mono',
+      source-code-pro, Menlo, Consolas, 'Courier New', monospace;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Space-themed scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-gray-900/50;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-gradient-to-b from-cyan-500 to-purple-600 rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply from-cyan-400 to-purple-500;
+  }
+
+  /* Futuristic selection */
+  ::selection {
+    @apply bg-cyan-500/30 text-cyan-300;
+  }
+
+  /* Space cursor */
+  * {
+    cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><circle cx="8" cy="8" r="2" fill="%2300ffff" opacity="0.8"/></svg>') 8 8, auto;
+  }
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+@layer components {
+  /* Glassmorphism base */
+  .glass {
+    background: rgba(15, 23, 42, 0.6);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  }
+
+  .glass-card {
+    @apply glass rounded-2xl;
+  }
+
+  /* Neon glow effects */
+  .neon-cyan {
+    @apply text-cyan-400;
+    text-shadow: 0 0 10px rgba(59, 169, 186, 0.8),
+                 0 0 20px rgba(34, 211, 238, 0.6),
+                 0 0 30px rgba(34, 211, 238, 0.4);
+  }
+
+  .neon-violet {
+    @apply text-violet-400;
+    text-shadow: 0 0 10px rgba(167, 139, 250, 0.8),
+                 0 0 20px rgba(167, 139, 250, 0.6),
+                 0 0 30px rgba(167, 139, 250, 0.4);
+  }
+
+  .neon-blue {
+    @apply text-blue-400;
+    text-shadow: 0 0 10px rgba(96, 165, 250, 0.8),
+                 0 0 20px rgba(96, 165, 250, 0.6),
+                 0 0 30px rgba(96, 165, 250, 0.4);
+  }
+
+  /* Animated gradient text */
+  .text-gradient-space {
+    @apply bg-gradient-to-r from-cyan-400 via-blue-400 to-violet-400 bg-clip-text text-transparent;
+    background-size: 200% 200%;
+    animation: space-gradient 4s ease infinite;
+  }
+
+  @keyframes space-gradient {
+    0%, 100% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+  }
+
+  /* Floating animation */
+  .float-space {
+    animation: float-space 6s ease-in-out infinite;
+  }
+
+  @keyframes float-space {
+    0%, 100% {
+      transform: translateY(0px) translateX(0px);
+    }
+    33% {
+      transform: translateY(-10px) translateX(5px);
+    }
+    66% {
+      transform: translateY(-5px) translateX(-5px);
+    }
+  }
+
+  /* Pulse glow */
+  .pulse-glow {
+    animation: pulse-glow 2s ease-in-out infinite;
+  }
+
+  @keyframes pulse-glow {
+    0%, 100% {
+      box-shadow: 0 0 20px rgba(34, 211, 238, 0.4);
+    }
+    50% {
+      box-shadow: 0 0 40px rgba(34, 211, 238, 0.8);
+    }
+  }
+
+  /* Enhanced buttons */
+  .btn-space {
+    @apply px-6 py-3 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105;
+    background: linear-gradient(135deg, rgba(34, 211, 238, 0.2), rgba(167, 139, 250, 0.2));
+    border: 1px solid rgba(34, 211, 238, 0.3);
+    backdrop-filter: blur(10px);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .btn-space::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(34, 211, 238, 0.4), transparent);
+    transition: left 0.5s;
+  }
+
+  .btn-space:hover::before {
+    left: 100%;
+  }
+
+  .btn-space:hover {
+    @apply neon-cyan;
+    border-color: rgba(34, 211, 238, 0.6);
+    box-shadow: 0 0 30px rgba(34, 211, 238, 0.5);
+  }
+
+  /* Space cards */
+  .card-space {
+    @apply glass-card p-6 transition-all duration-300 hover:scale-102 hover:shadow-2xl;
+    border: 1px solid rgba(34, 211, 238, 0.1);
+  }
+
+  .card-space:hover {
+    border-color: rgba(34, 211, 238, 0.3);
+    box-shadow: 0 0 40px rgba(34, 211, 238, 0.2);
+  }
+
+  /* Futuristic headings */
+  .heading-space {
+    @apply text-4xl md:text-5xl font-bold text-gradient-space mb-6 tracking-wider;
+    letter-spacing: 0.05em;
+  }
+
+  .heading-secondary-space {
+    @apply text-2xl md:text-3xl font-semibold text-cyan-300 mb-4 tracking-wide;
+  }
+
+  /* Space links */
+  .link-space {
+    @apply text-cyan-400 hover:text-cyan-300 transition-colors duration-300 relative;
+  }
+
+  .link-space::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    @apply bg-gradient-to-r from-cyan-400 to-violet-400;
+    transition: width 0.3s ease;
+  }
+
+  .link-space:hover::after {
+    width: 100%;
+  }
+
+  /* Space input fields */
+  .input-space {
+    @apply glass rounded-lg px-4 py-3 text-gray-100 placeholder-gray-400 border border-cyan-500/30 focus:border-cyan-400 focus:outline-none focus:ring-2 focus:ring-cyan-400/20 transition-all duration-300;
+  }
+
+  .input-space:focus {
+    @apply neon-cyan;
+    box-shadow: 0 0 30px rgba(34, 211, 238, 0.3);
+  }
+
+  /* Particle background */
+  .particles {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 1;
+  }
+
+  .particle {
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background: rgba(34, 211, 238, 0.6);
+    border-radius: 50%;
+    animation: particle-float 20s infinite linear;
+  }
+
+  @keyframes particle-float {
+    0% {
+      transform: translateY(100vh) translateX(0);
+      opacity: 0;
+    }
+    10% {
+      opacity: 1;
+    }
+    90% {
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(-100vh) translateX(100px);
+      opacity: 0;
+    }
+  }
+
+  /* Nebula clouds */
+  .nebula {
+    position: fixed;
+    border-radius: 50%;
+    filter: blur(100px);
+    opacity: 0.3;
+    animation: nebula-drift 30s infinite ease-in-out;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  @keyframes nebula-drift {
+    0%, 100% {
+      transform: translate(0, 0) scale(1);
+    }
+    33% {
+      transform: translate(30px, -30px) scale(1.1);
+    }
+    66% {
+      transform: translate(-20px, 20px) scale(0.9);
+    }
+  }
+}
+
+@layer utilities {
+  /* Enhanced spacing */
+  .section-padding-space {
+    @apply py-24;
+  }
+
+  .container-padding-space {
+    @apply px-6;
+  }
+
+  /* Interactive elements */
+  .interactive-space {
+    @apply transition-all duration-300 hover:scale-105 cursor-pointer;
+  }
+
+  .interactive-glow-space {
+    @apply interactive-space hover:neon-cyan;
+  }
+
+  /* Glow utilities */
+  .glow-cyan {
+    box-shadow: 0 0 20px rgba(34, 211, 238, 0.5);
+  }
+
+  .glow-violet {
+    box-shadow: 0 0 20px rgba(167, 139, 250, 0.5);
+  }
+
+  .glow-blue {
+    box-shadow: 0 0 20px rgba(96, 165, 250, 0.5);
+  }
 }

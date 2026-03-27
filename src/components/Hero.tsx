@@ -1,0 +1,155 @@
+import React from 'react';
+import { motion } from 'framer-motion';
+
+// Simple GitHub icon component
+const GithubIcon = ({ className }: { className: string }) => (
+  <svg className={className} fill="currentColor" viewBox="0 0 24 24">
+    <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12z"/>
+  </svg>
+);
+
+// Simple LinkedIn icon component
+const LinkedinIcon = ({ className }: { className: string }) => (
+  <svg className={className} fill="currentColor" viewBox="0 0 24 24">
+    <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+  </svg>
+);
+
+const Hero: React.FC = () => {
+  return (
+    <section id="hero" className="min-h-screen flex items-center justify-center relative overflow-hidden">
+      <div className="container mx-auto px-6 z-10">
+        <div className="text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="mb-8"
+          >
+            <div className="w-32 h-32 mx-auto mb-6 rounded-full bg-gradient-to-r from-cyan-500 to-violet-600 p-1 relative group float-space">
+              <div className="absolute inset-0 rounded-full bg-gradient-to-r from-cyan-500 to-violet-600 opacity-0 group-hover:opacity-20 transition-opacity duration-300 transform group-hover:scale-110" />
+              <div className="w-full h-full rounded-full bg-gray-900 overflow-hidden relative">
+                <img 
+                  src="/profile.jpg" 
+                  alt="Ajit Adhav" 
+                  className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-300"
+                />
+                <div className="absolute inset-0 rounded-full ring-4 ring-cyan-500/20 group-hover:ring-cyan-500/40 transition-all duration-300" />
+              </div>
+            </div>
+          </motion.div>
+
+          <motion.h1
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="text-5xl md:text-7xl font-bold mb-4 text-gradient-space tracking-wider"
+          >
+            Ajit Adhav
+          </motion.h1>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+            className="mb-6"
+          >
+            <h2 className="text-2xl md:text-3xl text-cyan-300 mb-2 font-semibold tracking-wide">
+              Full Stack Developer | Data Analyst
+            </h2>
+            <p className="text-xl md:text-2xl text-violet-300 font-medium tracking-wide">
+              Building scalable web apps and data-driven solutions
+            </p>
+          </motion.div>
+
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.6 }}
+            className="text-lg md:text-xl text-gray-300 mb-8 max-w-2xl mx-auto border-l-4 border-cyan-500/30 pl-4 py-2 glass-card font-medium"
+          >
+            Transforming complex problems into elegant solutions through clean code and data insights
+          </motion.p>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.8 }}
+            className="flex flex-col sm:flex-row gap-4 justify-center mb-8"
+          >
+            <a
+              href="#projects"
+              className="btn-space neon-cyan"
+            >
+              View Projects
+            </a>
+            <a
+              href="/resume.pdf"
+              target="_blank"
+              className="btn-space neon-violet"
+            >
+              Download Resume
+            </a>
+            <a
+              href="#contact"
+              className="btn-space neon-blue"
+            >
+              Get In Touch
+            </a>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 1 }}
+            className="flex justify-center gap-6"
+          >
+            <a
+              href="https://github.com/ajitadhav"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-3 rounded-full glass-card text-gray-300 hover:text-cyan-400 transition-all duration-300 transform hover:scale-110 hover:rotate-12 hover:neon-cyan interactive-space"
+            >
+              <GithubIcon className="w-6 h-6" />
+            </a>
+            <a
+              href="https://linkedin.com/in/ajitadhav"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-3 rounded-full glass-card text-gray-300 hover:text-cyan-400 transition-all duration-300 transform hover:scale-110 hover:rotate-12 hover:neon-cyan interactive-space"
+            >
+              <LinkedinIcon className="w-6 h-6" />
+            </a>
+          </motion.div>
+        </div>
+      </div>
+
+      {/* Scroll indicator */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1, delay: 1.5 }}
+        className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
+      >
+        <div className="flex flex-col items-center gap-2">
+          <div className="w-6 h-10 border-2 border-cyan-400/50 rounded-full flex justify-center">
+            <motion.div 
+              className="w-1 h-3 bg-cyan-400 rounded-full"
+              animate={{ y: [0, 12, 0] }}
+              transition={{ duration: 2, repeat: Infinity }}
+            />
+          </div>
+          <motion.span 
+            className="text-xs text-cyan-400 font-medium tracking-wider"
+            animate={{ opacity: [0.5, 1, 0.5] }}
+            transition={{ duration: 2, repeat: Infinity }}
+          >
+            Scroll
+          </motion.span>
+        </div>
+      </motion.div>
+    </section>
+  );
+};
+
+export default Hero;
